@@ -1,5 +1,6 @@
 from database import Usuario , db , Anuncio
 from peewee import *
+import time
 
 db.connect()
 db.create_tables([Usuario , Anuncio])   
@@ -11,4 +12,6 @@ def resultados():
           lista_usuarios = Usuario.select()
           for pessoa  in lista_usuarios:
                     print('Usuários: ',pessoa.id , pessoa.nome , pessoa.email , pessoa.senha)
+criar_usuários()
+time.sleep(3)
 resultados()
