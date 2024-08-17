@@ -37,7 +37,7 @@ def new_update():
 def criar_anuncio(pessoa ,descrição , valores , txt_titulo ):#função para conectar as tabelas
     anuncio = Anuncio.create(
     nome = pessoa, 
-    descrição = descrição ,
+    descricao = descrição ,
     valor = valores , 
     titulo = txt_titulo
     )
