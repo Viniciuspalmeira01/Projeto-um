@@ -32,9 +32,17 @@ def new_update():
     print('A pessoa escolhida foi :' , pessoo_escolhida.nome)
     novo_nome = input('Novo nome:\n')
     pessoo_escolhida.nome = novo_nome
-
     return pessoo_escolhida.save()
 
+def criar_anuncio(pessoa ,descrição , valores , txt_titulo ):#função para conectar as tabelas
+    anuncio = Anuncio.create(
+    nome = pessoa, 
+    descrição = descrição ,
+    valor = valores , 
+    titulo = txt_titulo
+    )
+    return anuncio.save()#retornar salvando o anuncio
+    
 def run():
     n = input('Digite a função requerida : \n')
     if n =='gerar perfis':
@@ -49,6 +57,14 @@ def run():
        delete(nome_antigo= nome)
        time.sleep(4)
        exibir_perfis()
+    elif n == 'criar anuncio':
+         elif n == 'criar anuncio':
+        nome = input('Seu nome : \n')
+        descrição = input('Digite uma descrição para seu anúncio: \n')
+        titulo = input('Qual sua profissão : \n')
+        valores = float(input('Digite sua pretensão :\n'))
+        criar_anuncio(nome, descrição= descrição , valores =valores , txt_titulo= titulo )
+        criar_anuncio()
     else:
         print('Não entendi')
 run()
